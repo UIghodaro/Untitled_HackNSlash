@@ -20,8 +20,20 @@ Ensure all folders are in the root, alongside game.py, editor.py and map.json
 
 ## Game Scope
 The game is an unfinished 2D platformer with a level editor included. The playable character has infinite jumps because why not.
+
+### In-Game Controls
 Character is **moved** via **WASD** keys, **spacebar** for **jump** and **shift** while moving in a direction to **DASH** and start **RUNNING**
 
+### In-Editor Controls
+Screen/camera is **moved** via **WASD** keys, **left-click** to **place a block** and *hold left-click* to place multiple. **right-click** to **delete a block** and *hold right-click* to delete multiple.
+
+Hold **shift** *and use the* **scroll wheel** to **Switch which block is being placed**.
+
+Press **'G'** *on the keyboard* to **toggle grid mode**. 
+
+Press **'O'** *on the keyboard* to **save the map** to map.json. Extra map features to be added I guess
+
+### Game('s) Vision
 The vision was for the game was a short game about raiding a fortress as a mercenary - **the only one sent on said mission for unknown reasons**.
 There are ideas about the fighting/weapon system, movement system and character system in head. Plans to come back to the project persist.
 
