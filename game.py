@@ -7,7 +7,7 @@
 #I have a vision, will it be hard though? Fuck yeah TT-TT
 #Tasks: 
 #1. Get a basic screen and player moving that doesn't feel ass (scroll and collisions).      -> Done!!!
-#2. Get basic assets going
+#2. Get basic assets going                                                                   -> Not done but moving on
 #3. Begin implementing game mechanics as above, make test dummy enemy
 #4. Finish mechanics and create a sandbox to create enemy AI and test game mechanics (AFTER THIS STAGE DON'T ADD ANYMORE MECHANICS. NO DEVELOPER HELL.)
 #5. Begin to create the levels, aim is 3, 1 tutorial, 2 accustoming, 3 a final boss, but this can be jank for now, focus on screen switches
@@ -52,12 +52,13 @@ class Game:
         
         
         self.scroll = [0, 0]
-        self.hinterGrund = Mountains(self.assets['mountains'], count = 16)
+        self.backGround = Mountains(self.assets['mountains'], count = 16)
         self.player = Player(self, (50,50), (32,32))
         self.tilemap = Tilemap(self, tile_size=32)
         try:
             self.tilemap.load('map.json')
         except FileNotFoundError:
+            print("Map.json not found")
             pass
         
     def run(self):
@@ -71,8 +72,8 @@ class Game:
             self.scroll[1] += (self.player.rect().centery - self.display.get_width() / 2.8 - self.scroll[1]) / 20
             render_scroll = (int(self.scroll[0]), int(self.scroll[1]))
             
-            #self.hinterGrund.update()
-            self.hinterGrund.render(self.display, offset = render_scroll)
+            #self.backGround.update()
+            self.backGround.render(self.display, offset = render_scroll)
 
             self.tilemap.render(self.display, offset = render_scroll)
             

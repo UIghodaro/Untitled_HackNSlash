@@ -80,11 +80,13 @@ class Player(PhysicsEntity):
         self.air_time = 0
         self.counter = 0
         self.current_jumps = 0
-        self.max_jump = 200
+        self.max_jump = 2
+
         self.dash = False
-        self.reDash = False
+        self.hack = False
+        self.slash = False
     
-    def update(self, tilemap, movement = (0, 0)):
+    def update(self, tilemap, movement = (0, 0), attack = 0):
         super().update(tilemap, movement=movement)
         
         self.air_time += 1
@@ -94,11 +96,11 @@ class Player(PhysicsEntity):
         if movement[0] != 0:
             if self.dash:
                 if self.counter < 5:
-                    self.movementModifier = 25
+                    self.movementModifier = 50
                 elif self.counter > 60:
                     self.dash = False
                 else:
-                    self.movementModifier = 4
+                    self.movementModifier = 6
             else:
                 self.counter = 0
                 
@@ -111,10 +113,13 @@ class Player(PhysicsEntity):
             self.air_time = 0
             self.current_jumps = 0
         
-        
         if self.air_time > 4:
             self.set_action('jump')
         elif movement[0] != 0:
             self.set_action('run')
         else:
             self.set_action('idle')
+
+        if attack:
+            if attack == 1:
+                self
