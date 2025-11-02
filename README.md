@@ -35,7 +35,7 @@ deactivate  # Shut down the virtual environment
 ```
 *Note: `requirements.txt` has minimal packages. Exact versions will be updated with `pip freeze` once I can access the original dev environment*
 ## What's included
-The game is a 2D platformer with a level editor included. The playable character is given infinite flight as the "Aston University Goose".
+The game is a 2D platformer with a level editor included. The playable character is a mercenary of sorts, able to jump twice and dash at fast speeds.
 - ``game.py`` - Playable demo
 - ``editor.py`` - Level editor
 - ``gameRss/images/`` - Assets (sprites & tiles)
