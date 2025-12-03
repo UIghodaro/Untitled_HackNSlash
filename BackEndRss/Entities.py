@@ -1,4 +1,5 @@
 import pygame
+from BackEndRss.Attack import Attack
 
 class PhysicsEntity:
     def __init__(self, game, e_type, pos, size):
@@ -9,10 +10,13 @@ class PhysicsEntity:
         self.velocity = [0, 0]
         self.collisions = {'up' : False, 'down' : False, 'left': False, 'right' : False}    #To keep track of what collisions are currently happening
 
-        self.action = ''    #What the character is currently doing
-        self.anim_offset = (-3, -3)   #This is as sometimes the animation may be larger than the player hitbox
-        self.flip = False       #Characters can turn around lmfao
-        self.set_action('idle')     #I love homogeneity
+        self.action = ''              # What the character is currently doing
+        self.anim_offset = (-3, -3)   # This is as sometimes the animation may be larger than the player hitbox
+        self.flip = False             # Characters can turn around lmfao
+        self.attack1 = False          # Each character will have 2 minimum attacks
+        self.attack2 = False          # Do not start in a state of attack!
+        
+        self.set_action('idle')       # I love homogeneity
         self.movementModifier = 1.5
         
     #Creating a rect for the entity for the sake of collisions
@@ -123,3 +127,5 @@ class Player(PhysicsEntity):
         if attack:
             if attack == 1:
                 self
+                
+
