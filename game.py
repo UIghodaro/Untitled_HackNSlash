@@ -91,6 +91,12 @@ class Game:
                 #if event.type == pygame.MOUSEBUTTONUP:
             
                 if event.type == pygame.KEYDOWN:
+                    
+                    # Dev keybind, remove in future
+                    if event.key == pygame.K_ESCAPE:
+                        pygame.quit()
+                        sys.exit()
+                        
                     if event.key == pygame.K_a:
                         self.movement[0] = True
                     if event.key == pygame.K_d:
